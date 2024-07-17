@@ -1,0 +1,32 @@
+# Default values for hello-world.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+apiPrefix: /api/v1
+
+deployment:
+  replicaCount: 3
+  evisionHistoryLimit: 5
+  maxSurge: 1
+  maxUnavailable: 33%
+  image: peterwolf/jokes-app:lr
+  port: 80
+  startupProbe:
+    path: startup
+  readinessProbe:
+    path: ready
+    initialDelaySeconds: 1  
+    periodSeconds: 10
+    failureThreshold: 2
+  livenessProbe:
+    path: health     
+    initialDelaySeconds: 1
+    failureThreshold: 2
+    periodSeconds: 10
+
+service:
+  port: 80
+  targetPort: 80
+
+ingress:
+  host: jokemeter.ai
