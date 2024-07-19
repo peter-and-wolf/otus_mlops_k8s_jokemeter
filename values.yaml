@@ -8,8 +8,8 @@ deployment:
   replicaCount: 3
   evisionHistoryLimit: 5
   maxSurge: 1
-  maxUnavailable: 33%
-  image: peterwolf/jokes-app:lr
+  maxUnavailable: 2
+  image: peterwolf/jokes-app:tr
   port: 80
   startupProbe:
     path: startup
