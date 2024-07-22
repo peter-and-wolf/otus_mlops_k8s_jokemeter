@@ -9,8 +9,9 @@ deployment:
   evisionHistoryLimit: 5
   maxSurge: 1
   maxUnavailable: 2
-  image: peterwolf/jokes-app:tr
+  image: peterwolf/jokemeter:tr
   port: 80
+  imagePullPolicy: Always
   startupProbe:
     path: startup
   readinessProbe:

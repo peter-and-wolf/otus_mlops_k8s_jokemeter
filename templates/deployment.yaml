@@ -21,6 +21,7 @@ spec:
       containers:
       - name: {{ .Release.Name }}
         image: {{ .Values.deployment.image }}
+        imagePullPolicy: {{ .Values.deployment.imagePullPolicy }}
         ports:
         - containerPort: {{ .Values.deployment.port }}
         startupProbe:
